@@ -1,0 +1,25 @@
+= How this works =
+This is old stuff I have rescued from my hard disk: observer pattern implemented using templates.
+
+There are two generic classes Observer and Subject with generic implementation of the pattern.
+These are implemented in Subject.h and Oberver.h files.
+
+There are one more file test_observer.cpp where are defined two concrete implementations of Subject and Observer 
+called ConcreteSubject and ConcreteObserver.
+
+The way of use is simple. You have to derive from Subject making a template of the ConcreteSubject class and then 
+call notify() when you want to say your observers that something has changed. For be able to do this you have to register
+your ConcreteObserver with the subject with register_observer() method. 
+
+ConcreteObserver class must derive from Observer and must implement its update() method
+which will be called when something in ConcrteSubject changes.
+
+For details take a look to the code.
+
+= Compile =
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+
+
